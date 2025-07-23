@@ -1,3 +1,74 @@
+/* algorithme max-min
+constant : NN=50 : entier 
+Variable :
+    A[NN] : entier;
+    max, posmax = 0, min, posmin = 0, n : entier;
+
+fonction remplitab (pointeur tab : entier , pointeur taille : entier ) : vide
+debut
+	Variable : i :entier ;
+	faire 
+		ecrire("Entre la taille de de tableau : ");
+		lire(taille);
+		si ( *taille <= 0 || *taille > NN) alors
+			afficher("Entrer la valeur entre 1 et 50 !!!\n");
+		}
+	tantque ( *taille <= 0 || *taille > NN); 
+	afficher ("\ntaille=",*taille);
+	pour (i = 0; i < *taille; i++) 
+		ecrire("case[",i,"]=");
+		lire(tab + i);
+	finpour
+fin
+
+fonction mindet (pointeur tab : entier , taille : entier , pointeur pst : entier ) : entier 
+debut
+	Variable : i :entier ;
+           	pointeur vmin : entier;
+               vmin<-*tab
+	pour (i <- 0; i < taille; i++) {
+		si (vmin <- *(tab + i)) alors
+			continue;
+		
+		sinon si(vmin>*(tab + i)) alors 
+			vmin <-*(tab + i);
+			*pst <- i;
+		finsi
+	finpour
+	retourne(vmin);
+fin
+
+fonction maxdet (pointeur tab : entier , taille : entier , pointeur pst : entier ) : entier 
+debut 
+	 variable :   i : entier ;
+	     vmax : entier ;
+        vmax <- *tab;
+	pour (i <-0; i < taille; i++) {
+		si (vmax == *(tab + i)) {
+			continue;
+		finsi
+		si ( vmax <*(tab + i)) alors
+			vmax <- *(tab + i);
+			*pst <- i;
+		finsi
+	finpour
+	retourne (vmax);
+fin
+
+debut
+
+	afficher ("Remplie le tableau A :\n ");
+	remplitab (A,&n);
+
+	max=maxdet(A,n,&posmax);	//determine la valeur maximal et sa position
+	afficher ("La valeur maximale de A est %d à la position %d\n",max,posmax);
+
+	min=mindet(A,n,&posmin);	//determine la valeur minimal et sa position
+	afficher ("La valeur minimal de tableau A est %d à la position %d\n",min,posmin);
+	retourne (0);
+fin
+ 
+*/
 #include<stdio.h>
 #define NN 50
 
