@@ -1,5 +1,5 @@
 /* algorithme max-min
-constant : NN=50 : entier 
+constant : NN <- 50 : entier 
 Variable :
     A[NN] : entier;
     max, posmax = 0, min, posmin = 0, n : entier;
@@ -15,7 +15,7 @@ debut
 		}
 	tantque ( *taille <= 0 || *taille > NN); 
 	afficher ("\ntaille=",*taille);
-	pour (i = 0; i < *taille; i++) 
+	pour (i <- 0; i < *taille; i++) 
 		ecrire("case[",i,"]=");
 		lire(tab + i);
 	finpour
@@ -44,7 +44,7 @@ debut
 	     vmax : entier ;
         vmax <- *tab;
 	pour (i <-0; i < taille; i++) {
-		si (vmax == *(tab + i)) {
+		si (vmax = *(tab + i)) {
 			continue;
 		finsi
 		si ( vmax <*(tab + i)) alors
@@ -61,10 +61,10 @@ debut
 	remplitab (A,&n);
 
 	max=maxdet(A,n,&posmax);	//determine la valeur maximal et sa position
-	afficher ("La valeur maximale de A est %d à la position %d\n",max,posmax);
+	afficher ("La valeur maximale de A est ",max,"à la position ",posmax);
 
 	min=mindet(A,n,&posmin);	//determine la valeur minimal et sa position
-	afficher ("La valeur minimal de tableau A est %d à la position %d\n",min,posmin);
+	afficher ("La valeur minimal de tableau A est ",min ,"à la position ",posmin);
 	retourne (0);
 fin
  
