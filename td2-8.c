@@ -60,10 +60,10 @@ debut
 	afficher ("Remplie le tableau A :\n ");
 	remplitab (A,&n);
 
-	max=maxdet(A,n,&posmax);	//determine la valeur maximal et sa position
+	max<-maxdet(A,n,&posmax);	//determine la valeur maximal et sa position
 	afficher ("La valeur maximale de A est ",max,"à la position ",posmax);
 
-	min=mindet(A,n,&posmin);	//determine la valeur minimal et sa position
+	min<-mindet(A,n,&posmin);	//determine la valeur minimal et sa position
 	afficher ("La valeur minimal de tableau A est ",min ,"à la position ",posmin);
 	retourne (0);
 fin
