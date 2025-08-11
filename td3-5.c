@@ -1,19 +1,20 @@
-/* Algorithme : proche_moyenne
- *
-fonction remplietab(int *tab, int *taille) : vide                       // fonction qui fait rempilie le tableau
-debut
-    i: entier;
-    faire
-        afficher("Entre la taille du tableau : ");
-        lire(taille);
-        si (*taille < 1 || *taille > 50) alors
-            afficher("Entrer une valeur compris entre 1 et 50\n");
-        finsi
-    tantque (*taille < 1 || *taille > 50);
-    pour (i <- 0; i < *taille; i++) 
-        printf("case[",i+1,"]=");
-        lire(tab + i);
-    finpou
+#include<stdio.h>
+
+void remplietab(int *tab, int *taille) : vide                       // fonction qui fait rempilie le tableau
+{
+	int i;
+    do {
+        printf("Entre la taille du tableau : ");
+        scanf("%d",taille);
+        if (*taille < 1 || *taille > 50) {
+            	prinf("Entrer une valeur compris entre 1 et 50\n");
+	}
+    } while (*taille < 1 || *taille > 50);
+    	for (i <- 0; i < *taille; i++) {
+         	printf("case[",i+1,"]=");
+         	scanf("%d",tab + i);
+    	}
+}
                                                                                                                                                              
 
 int sommetab(int *tab, int taille){				// fonction qui calcul la somme des elements du tableau
